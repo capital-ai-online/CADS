@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "CAPITAL_AI_CADS_MARKETPLACE_PRODUCTION_PLANS@1",
+  "strategy": "PAID_PRODUCTION",
+  "product": "CAPITAL-AI CADS Benchmark Engine",
+  "pricingAuthority": "GITHUB_MARKETPLACE_LISTING",
+  "currency": "USD",
+  "freePlanEnabled": false,
+  "plans": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "priceModel": "FLAT_RATE",
+      "billing": [
+        "monthly",
+        "yearly"
+      ],
+      "marketplacePlanIdEnv": "CADS_GITHUB_MARKETPLACE_STARTER_PLAN_ID",
+      "capabilities": {
+        "standardProfiles": true,
+        "githubCheck": "neutral",
+        "history": false,
+        "regressionDetection": false,
+        "evidenceExport": false,
+        "customProfiles": false,
+        "customThresholds": false,
+        "enforcedPrGate": false,
+        "api": false,
+        "selfHostedRunner": false
+      },
+      "availableFor": "ORGANIZATIONS_ONLY",
+      "freeTrialEnabled": false
+    },
+    {
+      "id": "pro",
+      "name": "Pro",
+      "priceModel": "FLAT_RATE",
+      "billing": [
+        "monthly",
+        "yearly"
+      ],
+      "marketplacePlanIdEnv": "CADS_GITHUB_MARKETPLACE_PRO_PLAN_ID",
+      "capabilities": {
+        "standardProfiles": true,
+        "githubCheck": "neutral",
+        "history": true,
+        "regressionDetection": true,
+        "evidenceExport": true,
+        "customProfiles": false,
+        "customThresholds": false,
+        "enforcedPrGate": false,
+        "api": false,
+        "selfHostedRunner": false
+      },
+      "availableFor": "ORGANIZATIONS_ONLY",
+      "freeTrialEnabled": false
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise",
+      "priceModel": "FLAT_RATE",
+      "billing": [
+        "monthly",
+        "yearly"
+      ],
+      "marketplacePlanIdEnv": "CADS_GITHUB_MARKETPLACE_ENTERPRISE_PLAN_ID",
+      "capabilities": {
+        "standardProfiles": true,
+        "githubCheck": "enforced",
+        "history": true,
+        "regressionDetection": true,
+        "evidenceExport": true,
+        "customProfiles": true,
+        "customThresholds": true,
+        "enforcedPrGate": true,
+        "api": true,
+        "selfHostedRunner": true
+      },
+      "availableFor": "ORGANIZATIONS_ONLY",
+      "freeTrialEnabled": false
+    }
+  ],
+  "priceValues": {
+    "state": "OWNER_INPUT_REQUIRED_IN_GITHUB_MARKETPLACE",
+    "reason": "GitHub Marketplace prices are authoritative in USD and are not inferred from EUR website pricing."
+  },
+  "audience": "B2B"
+}

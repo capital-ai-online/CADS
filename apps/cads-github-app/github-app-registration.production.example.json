@@ -1,0 +1,22 @@
+{
+  "name": "CAPITAL-AI CADS Benchmark Engine",
+  "description": "Evidence-bound CADS benchmark and governance capabilities for GitHub repositories.",
+  "url": "https://capital-ai.online",
+  "hook_url": "https://capital-ai.online/api/integrations/github/cads-marketplace",
+  "callback_urls": [
+    "https://capital-ai.online/api/cads/marketplace/oauth/callback"
+  ],
+  "setup_url": "https://capital-ai.online/api/cads/marketplace/setup",
+  "public": true,
+  "request_oauth_on_install": false,
+  "permissions": {
+    "metadata": "read",
+    "contents": "read",
+    "pull_requests": "read",
+    "checks": "write"
+  },
+  "events": [
+    "pull_request",
+    "installation"
+  ]
+}

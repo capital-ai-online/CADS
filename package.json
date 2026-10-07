@@ -1,0 +1,16 @@
+{
+  "name": "@capital-ai/cads",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CAPITAL-AI Decision Score (CADS) standalone B2B Marketplace staging package",
+  "type": "module",
+  "license": "LicenseRef-CAPITAL-AI-CADS-PROPRIETARY-1.0",
+  "engines": {
+    "node": "26.10.0"
+  },
+  "scripts": {
+    "test": "npm run test:cads-acceptance",
+    "test:cads-acceptance": "node --test packages/cads-core/index.test.mjs server/cads-marketplace.test.mjs server/cads-commerce.test.mjs server/cads-observability.test.mjs scripts/cads-marketplace-migration.test.mjs scripts/cads-marketplace-production-manifest.test.mjs scripts/cads-package-acceptance.test.mjs",
+    "evidence:cads-export": "node scripts/cads-standalone-provenance.mjs security-reports/cads-standalone-provenance.json"
+  }
+}
