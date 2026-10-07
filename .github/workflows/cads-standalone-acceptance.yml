@@ -1,0 +1,49 @@
+name: CADS Standalone Acceptance
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cads-standalone-acceptance:
+    name: CADS Standalone Acceptance
+    runs-on: ubuntu-26.04
+    timeout-minutes: 8
+    steps:
+      - name: Checkout exact candidate
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+
+      - name: Use pinned Node runtime
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '26.10.0'
+
+      - name: Verify source and transformation provenance
+        run: npm run evidence:cads-export
+
+      - name: CADS functional and Marketplace contract tests
+        run: npm run test:cads-acceptance
+
+      - name: Refuse secret-like material in evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RIE '(BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY|sb_secret_[A-Za-z0-9_-]{16,}|gh[opsu]_[A-Za-z0-9]{20,}|CADS_GITHUB_APP_PRIVATE_KEY=.+|CADS_GITHUB_CLIENT_SECRET=.+)' security-reports/cads-*.json; then
+            echo "Secret-like material detected."
+            exit 1
+          fi
+
+      - name: Upload provenance
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: cads-standalone-provenance-${{ github.event.pull_request.head.sha || github.sha }}
+          retention-days: 30
+          if-no-files-found: error
+          path: security-reports/cads-standalone-provenance.json

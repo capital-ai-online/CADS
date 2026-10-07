@@ -1,0 +1,181 @@
+{
+  "schemaVersion": "CAPITAL_AI_CADS_STANDALONE_SOURCE_MANIFEST@2",
+  "sourceRepository": "SvenKulessa/Capital-AI",
+  "sourceCommit": "0276d389412f806d2727c6b7b65d8215c703dbb1",
+  "targetRepository": "SvenKulessa/CADS",
+  "policy": "fail-closed",
+  "scope": {
+    "include": [
+      "CADS tier/entitlement logic",
+      "GitHub Marketplace runtime",
+      "commerce entitlement boundary",
+      "Supabase Marketplace entitlement migration",
+      "security/privacy/license/support evidence"
+    ],
+    "exclude": [
+      "NATS comparison benchmark",
+      "Kafka comparison benchmark",
+      "Go/Golang benchmark claim",
+      "Rust/Node event-backbone comparison",
+      "MARKET provider runtime",
+      "Valkey",
+      "Social Media Engine",
+      "unrelated Capital-AI UI"
+    ]
+  },
+  "files": [
+    {
+      "path": "packages/cads-core/index.mjs",
+      "targetGitBlobSha": "cdb5ddd9dbd5c40ccde50912a5fa0373b2a7a1f9",
+      "sourcePath": "packages/benchmark-core/index.mjs",
+      "sourceGitBlobSha": "c0c3fbc6bdcf6173c5ad5fb8412b6ee853212638",
+      "mode": "TRANSFORMED",
+      "transformation": "Extract CADS tier/capability entitlement contract only; event-backbone benchmark schema and NATS/Kafka/worker matrix intentionally omitted."
+    },
+    {
+      "path": "packages/cads-core/index.test.mjs",
+      "targetGitBlobSha": "41ddeb367b0b36ef2138c6cbc43d0ba07871b440",
+      "mode": "NEW_STANDALONE_TEST"
+    },
+    {
+      "path": "server/cads-marketplace.mjs",
+      "targetGitBlobSha": "8a586c8d4f339057532f86d6d951801d358a4298",
+      "sourceGitBlobSha": "b41d14aa9014f7ea51b0b598cc5a35f224e8bc6a",
+      "mode": "TRANSFORMED",
+      "transformation": "Use CADS core entitlement contract; remove benchmark-only naming."
+    },
+    {
+      "path": "server/cads-marketplace.test.mjs",
+      "targetGitBlobSha": "1e32b46ec3364696b773bbbea01bcb7e6bf1323d",
+      "sourceGitBlobSha": "665dd08a664b14bba045c336e4c2e7707076ce03",
+      "mode": "TRANSFORMED"
+    },
+    {
+      "path": "server/cads-commerce.mjs",
+      "targetGitBlobSha": "7e85900741f6423a60117e4bc161dbb9aa309c81",
+      "sourceGitBlobSha": "107fbdc5f2a3c50848f6dcf4b5a18b6764caa8cd",
+      "mode": "TRANSFORMED",
+      "transformation": "Use CADS core; remove benchmark readiness path and benchmark-only response naming."
+    },
+    {
+      "path": "server/cads-commerce.test.mjs",
+      "targetGitBlobSha": "77b6b47d4883a41abc1e6db436366bb82c5d2ccd",
+      "sourceGitBlobSha": "9e11db30fd0b137fc027157b6c5e631b7613bb78",
+      "mode": "TRANSFORMED"
+    },
+    {
+      "path": "scripts/cads-marketplace-production-manifest.test.mjs",
+      "targetGitBlobSha": "f8099ade83a277294ebadc0e7766be8174e3d029",
+      "sourceGitBlobSha": "bc451cb9ef645b579f5ef0c39a7b9a344db100fd",
+      "mode": "TRANSFORMED"
+    },
+    {
+      "path": "scripts/cads-package-acceptance.test.mjs",
+      "targetGitBlobSha": "0cb20b6ca52266b2b75e374c229061f1f11b205d",
+      "sourceGitBlobSha": "ca563913b120e5b5e5da5169c6e774bd7b74b9bc",
+      "mode": "TRANSFORMED"
+    },
+    {
+      "path": "server/cads-observability.mjs",
+      "targetGitBlobSha": "66f6352fbaed2d854c3c9361921b00c331455070",
+      "sourceGitBlobSha": "66f6352fbaed2d854c3c9361921b00c331455070",
+      "mode": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "server/cads-observability.test.mjs",
+      "targetGitBlobSha": "3dac7bb40344117c31e107b768ee6be1d987501e",
+      "sourceGitBlobSha": "3dac7bb40344117c31e107b768ee6be1d987501e",
+      "mode": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "server/http-security.mjs",
+      "targetGitBlobSha": "ad73afdfee662c474150878e5eee9e21b22a40a3",
+      "sourceGitBlobSha": "ad73afdfee662c474150878e5eee9e21b22a40a3",
+      "mode": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "server/billing-catalog.mjs",
+      "targetGitBlobSha": "3571e3bd5f151dbd0b93255b15ed06939dd4e063",
+      "sourceGitBlobSha": "3571e3bd5f151dbd0b93255b15ed06939dd4e063",
+      "mode": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "apps/cads-github-app/github-app-registration.production.example.json",
+      "targetGitBlobSha": "041bd4e582197fe0effbfe50696694a1056ebbd5",
+      "sourceGitBlobSha": "041bd4e582197fe0effbfe50696694a1056ebbd5",
+      "mode": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "apps/cads-github-app/marketplace-plans.production.json",
+      "targetGitBlobSha": "a6778bcf5aeda7fe634076de16cc9fa44803cbd5",
+      "sourceGitBlobSha": "a6778bcf5aeda7fe634076de16cc9fa44803cbd5",
+      "mode": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "supabase/migrations/20261006210500_cads_marketplace_paid_entitlements.sql",
+      "targetGitBlobSha": "fbbc120c4d11ce1fd29fec89a8361a5c2929838d",
+      "sourceGitBlobSha": "fbbc120c4d11ce1fd29fec89a8361a5c2929838d",
+      "mode": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "scripts/cads-marketplace-migration.test.mjs",
+      "targetGitBlobSha": "7ed1bebe3797f1115f37627b96d2e2612cb2bd82",
+      "sourceGitBlobSha": "7ed1bebe3797f1115f37627b96d2e2612cb2bd82",
+      "mode": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "docs/licenses/CADS-PRODUCT-LICENSE.md",
+      "targetGitBlobSha": "a6a7dcb2ab3b174016b1bc62ead0b11c890e7109",
+      "sourceGitBlobSha": "a6a7dcb2ab3b174016b1bc62ead0b11c890e7109",
+      "mode": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "docs/licenses/CADS-THIRD-PARTY-NOTICES.md",
+      "targetGitBlobSha": "40b38b0c4145cb765190f642d02792adb363a941",
+      "sourceGitBlobSha": "40b38b0c4145cb765190f642d02792adb363a941",
+      "mode": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "docs/product/CADS-MARKETPLACE-INSTALLATION.md",
+      "targetGitBlobSha": "f4377183e72565bb4b80d50b80ef664fd445f424",
+      "sourceGitBlobSha": "f4377183e72565bb4b80d50b80ef664fd445f424",
+      "mode": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "docs/product/CADS-MARKETPLACE-SUPPORT.md",
+      "targetGitBlobSha": "fd2511d2ff1dfd62e9f53156fff1315553c359ff",
+      "sourceGitBlobSha": "fd2511d2ff1dfd62e9f53156fff1315553c359ff",
+      "mode": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "docs/security/CADS-SECURITY.md",
+      "targetGitBlobSha": "8abfff19c66d448ec0aabbc3e0c2134db9ada895",
+      "sourceGitBlobSha": "8abfff19c66d448ec0aabbc3e0c2134db9ada895",
+      "mode": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "docs/legal/CADS-MARKETPLACE-PRIVACY.md",
+      "targetGitBlobSha": "7472703c60591ff4c8eadd6f1260a8557d104284",
+      "sourceGitBlobSha": "7472703c60591ff4c8eadd6f1260a8557d104284",
+      "mode": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "docs/legal/CADS-MARKETPLACE-B2B-TERMS-DRAFT.md",
+      "targetGitBlobSha": "520c27d1875ff7606dc294b78fc3a0d66d4fc652",
+      "sourceGitBlobSha": "520c27d1875ff7606dc294b78fc3a0d66d4fc652",
+      "mode": "BYTE_IDENTICAL"
+    }
+  ],
+  "knownNonEvidence": {
+    "natsGoComparison": "NOT_ACCEPTED_AND_NOT_EXPORTED",
+    "reason": "The NATS/Go path did not provide a valid successful basis and must not be represented as CADS release evidence."
+  },
+  "authorityBoundary": {
+    "sourceProvenance": true,
+    "functionalApproval": false,
+    "securityApproval": false,
+    "licenseApproval": false,
+    "productionApproval": false,
+    "marketplaceApproval": false
+  }
+}

@@ -1,0 +1,5 @@
+node_modules/
+security-reports/
+.env
+.env.*
+!.env.example
