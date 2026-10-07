@@ -17,13 +17,13 @@ Insbesondere werden keine erfolgreichen NATS-, Kafka-, Go-, Rust- oder Node-Verg
 7. Lizenz-, Privacy-, Support- und Security-Dokumentgrenzen.
 8. Secret-like-material scan der erzeugten Evidence.
 
-## Nicht durch dieses Gate freigegeben
+## Separate Freigabegrenzen
 
-- Security-Freigabe;
-- Lizenz-/Legal-Freigabe;
-- Production-Freigabe;
-- GitHub-Marketplace-Listing-Freigabe;
-- Performance-SLA;
-- Event-Backbone-/NATS-/Go-Eignung.
+- Security bleibt separat und wird durch dieses Gate nicht freigegeben.
+- Lizenz / Legal bleibt separat und wird durch dieses Gate nicht freigegeben.
+- Marketplace bleibt separat und benötigt die externe GitHub-Freigabe.
+- Production bleibt separat und benötigt eine eigene Runtime-/Deployment-Abnahme.
+- Performance-SLA bleibt separat.
+- Event-Backbone-, NATS- und Go-Eignung bleiben separat und benötigen neue reproduzierbare Evidence.
 
-Diese Freigaben bleiben separat.
+Der nicht erfolgreiche NATS/Go-Pfad darf insbesondere nicht als CADS-Erfolg, Benchmark-PASS oder Production-Evidence interpretiert werden.
